@@ -1,0 +1,4 @@
+When using this algorithm, it is important to keep in mind that it is not perfect.
+It is possible that the algorithm may generate features that are not useful for building machine learning models. 
+It is important to evaluate the generated features carefully before using them to train a model.
+
