@@ -1,0 +1,39 @@
+from sklearn.feature_extraction.FeatureHasher import FeatureHasher
+
+def generate_features(df):
+  """Generates features from a Pandas DataFrame.
+
+  Args:
+    df: A Pandas DataFrame.
+
+  Returns:
+    A NumPy array of features.
+  """
+
+  # Create a FeatureHasher object.
+  hasher = FeatureHasher()
+
+  # Convert the DataFrame to a NumPy array.
+  X = df.values
+
+  # Generate features from the NumPy array.
+  X_features = hasher.transform(X)
+
+  # Return the features.
+  return X_features
+
+# Example usage:
+
+df = pd.DataFrame({
+  "id": [1, 2, 3, 4, 5],
+  "name": ["Bob", "Mary", "Joe", "Alice", "Eve"],
+  "age": [25, 30, 35, 40, 45],
+  "height": [170, 160, 150, 140, 130],
+  "weight": [70, 60, 50, 40, 30]
+})
+
+# Generate features from the data.
+X_features = generate_features(df)
+
+# Print the features.
+print(X_features)
